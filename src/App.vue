@@ -12,7 +12,9 @@ import HeaderMenu from './components/HeaderMenu.component.vue';
       <n-layout-content class="content">
         <n-space justify="center">
           <n-message-provider>
-            <RouterView/>
+            <div class="container">
+              <RouterView/>
+            </div>
           </n-message-provider>
         </n-space>
       </n-layout-content>
@@ -21,6 +23,12 @@ import HeaderMenu from './components/HeaderMenu.component.vue';
 </template>
 
 <style scoped>
+.container {
+  height: 86vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .content {
   margin-top: 1em;
   margin-left: 3em;
