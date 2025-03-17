@@ -12,9 +12,7 @@ import HeaderMenu from './components/HeaderMenu.component.vue';
       <n-layout-content class="content">
         <n-space justify="center">
           <n-message-provider>
-            <div class="container">
               <RouterView/>
-            </div>
           </n-message-provider>
         </n-space>
       </n-layout-content>
