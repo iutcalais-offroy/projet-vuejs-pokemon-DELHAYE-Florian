@@ -1,18 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import axios from 'axios';
-
-interface Pokemon {
-  id: number;
-  name: string;
-  pokedexId: number;
-  type: string;
-  imageUrl: string;
-  lifePoints: number;
-  attackId: number;
-  height: number;
-  weight: number;
-}
+import type { Pokemon } from '../types/pokemonTypes';
 
 export const usePokemonStore = defineStore('pokemon', () => {
   const pokemons = ref<Pokemon[]>([]);
@@ -22,6 +11,9 @@ export const usePokemonStore = defineStore('pokemon', () => {
     try {
       const response = await axios.get('https://pokemon-api-seyrinian-production.up.railway.app/pokemon-cards');
       pokemons.value = response.data;
+      pokemons.value.forEach((elt) => {
+        console.log(elt);
+      })
     } catch (error) {
       console.error('Erreur lors de la récupération des données:', error);
     }
